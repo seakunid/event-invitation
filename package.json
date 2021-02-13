@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npx nodemon src/index.js",
+    "start": "node src/index.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,12 @@
   "bugs": {
     "url": "https://github.com/seakunid/event-invitation/issues"
   },
-  "homepage": "https://github.com/seakunid/event-invitation#readme"
+  "homepage": "https://github.com/seakunid/event-invitation#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "google-spreadsheet": "^3.1.15"
+  }
 }

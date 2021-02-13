@@ -10,7 +10,7 @@ const getUserEvent = async (eventName) => {
 	});
 
 	await docsDataUserEventSeakun.loadInfo();
-	const sheet = await docsDataUserEventSeakun.sheetsByIndex[0];
+	const sheet = await docsDataUserEventSeakun.sheetsByIndex[1];
 	const rows = await sheet.getRows();
 	if (rows) {
 		rows.forEach((row) => {
