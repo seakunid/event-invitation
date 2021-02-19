@@ -17,7 +17,7 @@ const whatsapp = (fullname, phone, eventTemplate) => {
         },
         data : data
     };
-
+    
     axios(config)
     .then(() => {
         console.log(`Success Send Event to Whatsapp ${fullname}`)

@@ -8,9 +8,10 @@ const main = async() => {
     const eventName = 'seakun-x-hrmc';
     const event = await getEvent(eventName);
     const users = await getUserEvent(eventName);
+    console.log(event);
     users.forEach(user => {
         mail(event, user);
-        whatsapp(user.fullname, user.whatsapp, eventTemplate())
+        whatsapp(user.fullname, user.whatsapp, eventTemplate(event))
     })
 };
 
