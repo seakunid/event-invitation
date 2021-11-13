@@ -18,9 +18,11 @@ const getEvent = async (eventName) => {
 				event = {
 					type_event: rows[i]._rawData[2],
 					title_event: rows[i]._rawData[3],
-					link_event: rows[i]._rawData[12],
+					url_banner: rows[i]._rawData[5],
+					narasumber: rows[i]._rawData[7],
 					date: rows[i]._rawData[8],
 					time: rows[i]._rawData[9],
+					link_event: rows[i]._rawData[12],
 				};
 				break;
 			}
