@@ -1,20 +1,20 @@
 const getEvent = require('./event/data');
-const getUserEvent = require('./event/user');
+const getUsers= require('./event/user');
 const mail = require('./notification/email');
-const whatsapp = require('./notification/whatsapp');
-const { eventTemplate } = require('./template');
 
-const main = async() => {
-    const eventName = 'seakun-x-hrmc';
+const main = async (start, end) => {
+    const eventName = 'seakun-x-alvi';
     const event = await getEvent(eventName);
-    const users = await getUserEvent(eventName);
-    console.log(event);
-    users.forEach(user => {
-        mail(event, user);
-        whatsapp(user.fullname, user.whatsapp, eventTemplate(event))
-    })
+    const users = await getUsers(start, end);
+    const url = 'http://localhost:4001/direct-event-invitation';
+    users.forEach(async (user) => {
+        await mail(event, user, url);
+    });
 };
 
-main()
-    .then(() => console.log('success send all event'))
-    .catch(err => console.log(err));
+const start = 0;
+const stop = 1;
+
+main(start, stop)
+ .then(() => console.log('success send all event'))
+ .catch(e => console.log(e));
